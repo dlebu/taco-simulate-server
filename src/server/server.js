@@ -16,11 +16,6 @@ var fs = require('fs'),
 
 var pluginSimulationFiles = require('./plugin-files');
 
-Q.onerror = function (error) {
-    log.error(error);
-};
-Q.longStackSupport = true;
-
 function attach(app) {
     dirs.node_modules.forEach(function (dir) {
         app.use('/node_modules', cordovaServe.static(dir));
